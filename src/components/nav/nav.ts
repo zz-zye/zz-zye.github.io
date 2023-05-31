@@ -97,7 +97,7 @@
     }
 
     dot_r = Math.floor((rect.right - rect.left) * 0.18);
-    line_width = Math.floor((rect.right - rect.left) * 0.025);
+    line_width = Math.floor((rect.right - rect.left) * 0.03);
   }
 
   function toggle_dot_focus(dot = 0, on = true): void {

@@ -1,0 +1,204 @@
+/* styles for the pattern lock navbar */
+
+/* ******************************************************* */
+/* nav itself */
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  z-index: 100;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
+
+/* ******************************************************* */
+/* 9 dots */
+#nav-dots {
+  position: relative;
+  width: 35%;
+  min-width: 100px;
+  max-width: 200px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#nav-dots ol {
+  position: relative;
+  width: 100%;
+
+  padding-top: 100%; /* 1:1 aspect ratio */
+}
+
+#nav-dots li {
+  position: absolute;
+  width: 7%;
+  height: 7%;
+
+  border-radius: 100%;
+  background-color: white;
+
+  transform: translate(-50%, -50%);
+}
+
+#nav-dots li.focus {
+  width: 10%;
+  height: 10%;
+}
+
+#nav-dots li.wrong {
+  background-color: rgb(255, 140, 140);
+}
+
+/* position each row */
+#nav-dots li:nth-child(n + 1) {
+  top: 0;
+}
+#nav-dots li:nth-child(n + 4) {
+  top: 50%;
+}
+#nav-dots li:nth-child(n + 7) {
+  top: 100%;
+}
+/* position each column */
+#nav-dots li:nth-child(3n + 1) {
+  left: 0;
+}
+#nav-dots li:nth-child(3n + 2) {
+  left: 50%;
+}
+#nav-dots li:nth-child(3n + 3) {
+  left: 100%;
+}
+
+/* ******************************************************* */
+/* canvas */
+
+#nav-pattern {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 110;
+
+  margin: 0;
+  padding: 0;
+}
+
+/* ******************************************************* */
+/* small state */
+
+#nav-dots img {
+  position: absolute;
+  width: 105%; /* account for line width */
+
+  user-select: none;
+}
+
+/* back to home */
+nav > a[href="/"] {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 70px;
+}
+
+@keyframes nav-shrink {
+  0% {
+    height: 100%;
+  }
+  100% {
+    height: 70px;
+  }
+}
+
+nav.small {
+  animation-delay: 1.2s;
+  animation-duration: 1.5s;
+  animation-name: nav-shrink;
+  animation-timing-function: cubic-bezier(0.75, 0, 0.28, 1);
+  animation-fill-mode: forwards;
+}
+
+@keyframes dot-shrink {
+  0% {
+    width: 35%;
+    min-width: 100px;
+    max-width: 200px;
+  }
+  100% {
+    width: 40px;
+    min-width: 40px;
+  }
+}
+
+nav.small #nav-dots {
+  animation-delay: 0.2s;
+  animation-duration: 2s;
+  animation-name: dot-shrink;
+  animation-timing-function: cubic-bezier(0.57, 0, 0.58, 1);
+  animation-fill-mode: forwards;
+}
+
+@keyframes dot-disappear {
+  0% {
+    background-color: white;
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+nav.small #nav-dots li {
+  animation-delay: 0.2s;
+  animation-duration: 1.5s;
+  animation-name: dot-disappear;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+/* ******************************************************* */
+/* compatibility: javascript disabled or canvas not supported */
+
+#nav-pattern {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#nav-pattern > img {
+  position: absolute;
+  top: auto;
+  bottom: auto;
+  left: auto;
+  right: auto;
+
+  width: 36.75%;
+  max-width: 210px;
+  min-width: 105px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+#nav-pattern > .nav-link {
+  margin-top: 10%;
+  margin-bottom: auto;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+#nav-pattern > .nav-link > img {
+  width: 50px;
+  opacity: 0.7;
+}
+
+#nav-pattern > .nav-link:hover + img {
+  opacity: 1;
+}

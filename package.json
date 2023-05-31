@@ -1,0 +1,7 @@
+{
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "scripts": {
+    "dev": "rm -rf dist && parcel \"src/**/*.html\"",
+    "build": "rm -rf docs && parcel build \"src/**/*.html\" --dist-dir docs --no-content-hash"
+  }
+}

@@ -13,7 +13,7 @@ Vanilla `HTML` / `CSS` / `TS`.
 
 [`parcel`](https://parceljs.org/) to build the actual site.
 
-[`normalize.css`]()
+[`normalize.css`](https://github.com/necolas/normalize.css)
 
 ---
 

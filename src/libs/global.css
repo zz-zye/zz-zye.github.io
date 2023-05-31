@@ -1,3 +1,4 @@
+/* main */
 main {
   position: absolute;
   top: 0;
@@ -5,9 +6,10 @@ main {
   left: 0;
   right: 0;
 
-  padding-top: 70px;
+  padding-top: 65px;
 }
 
+/* list style */
 ol,
 ul {
   margin: 0;
@@ -16,4 +18,14 @@ ul {
 
 li {
   list-style: none;
+}
+
+/* no select or drag */
+img[draggable="false"] {
+  user-drag: none;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }

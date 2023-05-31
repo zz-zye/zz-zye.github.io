@@ -35,7 +35,9 @@
       valid_patterns: [
         /* use [1-9] here instead of [0-8] */
         { valid_pattern: 541263789, link: "/projects" },
-        { valid_pattern: 183526794, link: "/projects/pattern" }
+        { valid_pattern: 183526794, link: "/projects/pattern" },
+        { valid_pattern: 4123658, link: "/about" },
+        { valid_pattern: 8563214, link: "/about" }
       ],
       wrong_timeout_ms: 1000
     }
@@ -237,7 +239,6 @@
     return pattern.reduce((total, cur) => total * 10 + (cur + 1), 0);
   }
 
-  /* each valid pattern leads to a link */
   function pattern_to_link(): string | null {
     let pattern_code = pattern_to_number();
 
@@ -259,6 +260,7 @@
     mouse_x = x;
     mouse_y = y;
 
+    dot_under_mouse = coords_to_dot(mouse_x, mouse_y);
     reset_pattern();
 
     if (dot_under_mouse !== null) {
@@ -336,14 +338,21 @@
     on_mousedown(e.offsetX, e.offsetY);
   });
   canvas.addEventListener("touchstart", function (e) {
-    on_mousedown(e.touches[0].clientX, e.touches[0].clientY);
+    let touches = e.changedTouches;
+    let touch = touches[touches.length - 1];
+    on_mousedown(touch.clientX, touch.clientY);
   });
 
   canvas.addEventListener("mousemove", function (e) {
     on_mousemove(e.offsetX, e.offsetY);
   });
   canvas.addEventListener("touchmove", function (e) {
-    on_mousedown(e.touches[0].clientX, e.touches[0].clientY);
+    if (!mousedown) {
+      return; /* no need to enlarge dots if not touched */
+    }
+    let touches = e.changedTouches;
+    let touch = touches[touches.length - 1];
+    on_mousemove(touch.clientX, touch.clientY);
   });
 
   canvas.addEventListener("mouseup", function (e) {

@@ -107,7 +107,7 @@ nav > a[href="/"] {
   position: absolute;
   top: 0;
   width: 100%;
-  height: 70px;
+  height: 65px;
 }
 
 @keyframes nav-shrink {
@@ -115,7 +115,7 @@ nav > a[href="/"] {
     height: 100%;
   }
   100% {
-    height: 70px;
+    height: 65px;
   }
 }
 

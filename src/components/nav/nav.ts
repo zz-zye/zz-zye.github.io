@@ -350,6 +350,7 @@
     if (!mousedown) {
       return; /* no need to enlarge dots if not touched */
     }
+    e.preventDefault();
     let touches = e.changedTouches;
     let touch = touches[touches.length - 1];
     on_mousemove(touch.clientX, touch.clientY);

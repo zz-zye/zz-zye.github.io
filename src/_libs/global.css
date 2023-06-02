@@ -6,7 +6,8 @@ main {
   left: 0;
   right: 0;
 
-  padding-top: 65px;
+  margin-top: 65px;
+  overflow-y: scroll;
 }
 
 /* list style */

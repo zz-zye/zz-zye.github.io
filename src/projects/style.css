@@ -1,3 +1,61 @@
-main {
-  background-color: rgb(77, 73, 100);
+/* basic stuff */
+
+html {
+  background-color: black;
+}
+
+/* ******************************************************* */
+/* main */
+
+main section {
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow-y: hidden;
+}
+
+/* ******************************************************* */
+/* titles */
+
+h1 {
+  position: absolute;
+  top: 0;
+
+  white-space: nowrap;
+  font-family: "Courier Prime", monospace;
+  font-size: 5rem;
+  font-weight: normal;
+  color: white;
+}
+
+@media (max-width: 500px) {
+  h1 {
+    font-size: 3rem;
+  }
+}
+
+/* ******************************************************* */
+/* section 1: Zye */
+
+.section1 {
+  background-color: rgb(33, 26, 44);
+}
+
+/* ******************************************************* */
+/* section 2: Dr. Zye */
+
+.section2 {
+  background-color: rgb(34, 46, 76);
+}
+
+/* ******************************************************* */
+/* section 3: Zye World */
+
+.section3 {
+  background-color: rgb(29, 79, 85);
 }

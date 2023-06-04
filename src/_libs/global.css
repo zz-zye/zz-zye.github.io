@@ -7,7 +7,8 @@ main {
   right: 0;
 
   margin-top: 65px;
-  overflow-y: scroll;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 /* list style */
@@ -23,7 +24,6 @@ li {
 
 /* no select or drag */
 img[draggable="false"] {
-  user-drag: none;
   -webkit-user-drag: none;
   user-select: none;
   -moz-user-select: none;

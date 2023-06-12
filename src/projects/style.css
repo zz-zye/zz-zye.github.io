@@ -5,7 +5,7 @@ html {
 }
 
 /* ******************************************************* */
-/* main */
+/* sections */
 
 main section {
   position: relative;
@@ -17,20 +17,19 @@ main section {
   align-items: center;
 
   overflow-y: hidden;
+  color: white;
 }
 
 /* ******************************************************* */
 /* titles */
 
 h1 {
-  position: absolute;
-  top: 0;
+  position: relative;
 
   white-space: nowrap;
-  font-family: "Courier Prime", monospace;
+  font-family: "Space Grotesk", sans-serif;
   font-size: 5rem;
   font-weight: normal;
-  color: white;
 }
 
 @media (max-width: 500px) {
@@ -39,23 +38,53 @@ h1 {
   }
 }
 
-/* ******************************************************* */
-/* section 1: Zye */
+main aside {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 5%;
+  min-width: 50px;
+  max-width: 100px;
+  background-color: rgba(0, 0, 0, 0.3);
 
-.section1 {
-  background-color: rgb(33, 26, 44);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main aside h2 {
+  position: relative;
+  font-family: "Space Grotesk", sans-serif;
+  white-space: nowrap;
+
+  transform: rotate(270deg);
 }
 
 /* ******************************************************* */
-/* section 2: Dr. Zye */
+/* section 1: Hero */
+
+.section1 {
+  background-color: rgb(14, 17, 32);
+}
+
+/* ******************************************************* */
+/* section 2: Zye */
 
 .section2 {
   background-color: rgb(34, 46, 76);
 }
 
 /* ******************************************************* */
-/* section 3: Zye World */
+/* section 3: Dr. Zye */
 
 .section3 {
   background-color: rgb(29, 79, 85);
+}
+
+/* ******************************************************* */
+/* section 4: Zye World */
+
+.section4 {
+  background-color: rgb(61, 110, 102);
 }

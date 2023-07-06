@@ -1,3 +1,23 @@
 html {
   background-color: black;
 }
+
+html::before,
+html::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+html::before {
+  filter: url(#grainy);
+}
+
+html::after {
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(40, 40, 40, 0.7),
+    rgba(13, 13, 13, 0.7),
+    black
+  );
+}

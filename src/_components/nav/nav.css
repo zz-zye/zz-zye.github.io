@@ -166,7 +166,7 @@ nav.small #nav-dots li {
 }
 
 /* back to home */
-nav > a[href="/"] {
+nav > a.home {
   position: absolute;
   width: 100%;
   height: 100%;

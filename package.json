@@ -1,7 +1,11 @@
 {
-  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "devDependencies": {
+    "parcel": "^2.9.3"
+  },
+  "source": "src/index.html",
   "scripts": {
-    "dev": "rm -rf dist && parcel \"src/**/*.html\"",
-    "build": "rm -rf docs && parcel build \"src/**/*.html\" --dist-dir docs --no-content-hash"
-  }
+    "dev": "rm -rf dist && npx parcel",
+    "build": "rm -rf docs && npx parcel build --dist-dir docs --no-content-hash"
+  },
+  "browserslist": "> 0.5%, last 2 versions, not dead"
 }

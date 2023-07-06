@@ -1,2 +1,2 @@
-
+html{background-color:#000}html:before,html:after{content:"";position:absolute;inset:0}html:before{filter:url(#grainy)}html:after{background:radial-gradient(circle,#282828b3,#0d0d0db3,#000)}
 /*# sourceMappingURL=index.b5d7c2fd.css.map */
